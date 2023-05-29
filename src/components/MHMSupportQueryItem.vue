@@ -5,7 +5,10 @@
             <v-row>
                 <v-col>
                     <v-card-title>{{ subject }}Subject
-                        <v-badge inline size="x-large" content="OPEN" color="success"></v-badge>
+                        <v-badge inline size="x-large" content="SUCCESS" color="success"></v-badge>
+                        <v-badge inline size="x-large" content="ERROR" color="error"></v-badge>
+                        <v-badge inline size="x-large" content="INFO" color="info"></v-badge>
+                        <v-badge inline size="x-large" content="WARNING" color="warning"></v-badge>
                     </v-card-title>
                     <v-card-subtitle class="resident-label-bk">
                         <div class="resident-label">
@@ -35,9 +38,15 @@
                     <MHMCategoryChip :categories="cats"/>
                 </v-card-item>
                 <v-card-actions>
-                    <v-btn variant="plain">Plain</v-btn>
-                    <v-btn variant="outlined">Outlined</v-btn>
-                    <v-btn variant="flat">Flat</v-btn>
+
+                <v-btn variant="plain">Plain</v-btn>
+                <v-btn variant="outlined" color="primary">Outlined - Primary</v-btn>
+                <v-btn variant="flat" color="secondary">Flat - Secondary</v-btn>
+
+                
+                <v-btn variant="elevated" color="primary-darken-1">Elevated - Primary Darken</v-btn>
+                <v-btn variant="tonal" color="secondary-darken-1">Tonal - Secondary Darken</v-btn>
+                
                 </v-card-actions>
             </div>
         </v-expand-transition>
@@ -63,8 +72,8 @@ export default {
     data() {
         return {
             cats:[
-                new Category("Thing"),
-                new Category("Other Thing")
+                new Category("IT"),
+                new Category("Education")
             ],
             show:false,
         }
