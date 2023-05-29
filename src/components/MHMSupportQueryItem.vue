@@ -35,7 +35,9 @@
                     <MHMCategoryChip :categories="cats"/>
                 </v-card-item>
                 <v-card-actions>
-                    <v-btn variant="plain">Action</v-btn>
+                    <v-btn variant="plain">Plain</v-btn>
+                    <v-btn variant="outlined">Outlined</v-btn>
+                    <v-btn variant="flat">Flat</v-btn>
                 </v-card-actions>
             </div>
         </v-expand-transition>
