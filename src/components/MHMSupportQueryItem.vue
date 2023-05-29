@@ -1,12 +1,19 @@
 <template>
 
     <v-card>
-        <v-card-item class="d-flex">
-            <v-btn class="float-right" color="mhm-light-grey" size="sm" :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-            @click="show = !show"></v-btn>
-            <v-badge inline size="x-large" content="OPEN" color="success"></v-badge>
-            <v-card-title>{{ subject }}</v-card-title>
-            <v-card-subtitle>{{ residentname }} - {{ residentid }}</v-card-subtitle>
+        <v-card-item >
+            <v-row>
+                <v-col>
+                    <v-card-title>{{ subject }}Subject
+                        <v-badge inline size="x-large" content="OPEN" color="success"></v-badge>
+                    </v-card-title>
+                    <v-card-subtitle>{{ residentname }} | MDOC: #{{ residentid }} | Building: | Pod: </v-card-subtitle>
+                </v-col>
+                <v-col>
+                    <v-btn class="float-right" color="mhm-light-grey" size="48" :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                    @click="show = !show"></v-btn>
+                </v-col>
+            </v-row>
             <v-divider class="query-item-divider"></v-divider>
         </v-card-item>
         
@@ -35,14 +42,13 @@
 <script lang="ts">
 import Category from '@/models/Categories';
 import MHMCategoryChip from './MHMCategoryChip.vue';
-
+import Resident from '@/models/Resident';
 
 export default {
     name:"MHMSupportQueryItem",
     props:{
         subject:String,
-        residentname:String,
-        residentid:String,
+        resident:Resident,
 
     },
     components:{
